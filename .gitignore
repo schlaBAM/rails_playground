@@ -1,0 +1,156 @@
+.bundle
+
+# No log or backup files should be recorded
+*.log
+rails_monitor.*
+*.orig
+dump.rdb
+*~
+
+# We ignore all subversion directories underneath test and vendor
+.svn
+test/*/.svn
+
+# ignore osx dsstore files
+.DS_Store
+
+# ignore osx's ._ files
+._*
+
+# ignore ctags tag cache file
+/tags
+.tags_swap
+
+# ignore various .sw files for us vim users
+*.sw[a-p]
+
+# no compressed js/css files
+public/assets
+# but this one we keep version controlled so that it's there in dev mode:
+!public/assets/closure.js
+
+# no love for tmp files
+tmp/*
+.sass-cache
+
+# no need to keep me covered
+coverage/*
+coverage.data
+
+# no local theme / product images either
+public/tmp
+public/files
+public/bundles
+private/files
+
+# ignore embedded app development
+public/embedded-app-example.html
+public/embedded-app-modal-example.html
+public/embedded-app-action-example.html
+
+*.orig
+
+.dotest
+
+# ignore structure.sql -- update and restore from structure.versioned.sql when appropriate
+db/*structure.sql
+
+# ignore backups
+db/backup
+
+db/development_structure.sql
+
+# ignore graphql json schema dumps
+db/graphql/*_schema.json
+
+*.db
+!db/mime_types/*.db
+
+test/files/test.zip
+chromedriver.log
+TEST-FAILED-*.png
+
+*.tmproj
+
+# Output of performance files
+test/performance/tmp
+
+config/ultrasphinx/*.conf
+
+.rvmrc
+.ruby-gemset
+.rbenv-version
+.ci
+.akephalos
+!.gitkeep
+.bootstrap/*
+.tags
+.tags_sorted_by_file
+db/test_structure.sql
+/shopify-deps_*
+/shopify-dev-deps_*
+vendor/bundle
+vendor/GeoIP*.dat
+
+# CTags file
+.gemtags
+
+generated
+node_modules
+
+# Generated HTML templates for JS tests
+test/javascripts/html.js.coffee
+
+# For vagrant and chef
+/cookbooks
+/.vagrant
+
+# sublime projects
+*.sublime-project
+*.sublime-workspace
+
+# RubyMine
+.idea
+Gemfile.rubymine.lock
+*.structure
+*.rakeTasks
+
+# Aptana Studio
+.externalToolBuilders
+.project
+.settings
+
+# VS Code
+.vscode/
+
+*.nfs*
+
+config/*.marshal
+config/etcd.yml
+
+test/reports/
+deploy/vendor
+
+log/*
+
+.byebug_history
+
+.solargraph.yml
+
+# Ignore generated doc and cache dirs
+.yardoc
+doc/docset/*
+doc/graph/*
+doc/yard/*
+doc/*.gz
+doc/Shopify.docset/*
+doc/api/*
+
+# Ignore componentization constant list, can be deleted summer 2017
+lib/development_support/componentized_constants.csv
+
+# Ignore adr-dir for Apps Domain
+.adr-dir
+
+# in-repo gem's sync their lockfile with the application lockfile
+/gems/*/Gemfile.lock

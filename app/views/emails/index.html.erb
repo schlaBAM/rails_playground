@@ -1,4 +1,7 @@
 <h3>Emails List </h3>
+
+<br><%= link_to 'New Email!!!!!', new_email_path %><br><br>
+
 <table>
   <tr>
     <th>ID</th>
@@ -12,40 +15,8 @@
     <td><%= email.text %></td>
     <td><%= link_to 'Show Email', email_path(email) %></td>
     <td><%= link_to 'Edit Email', edit_email_path(email) %></td>
+    <td><%= link_to 'Delete Email', email_path(email), method: :delete, data: {confirm: 'Are you sure?'} %></td>
   </tr>
     <% end %>
 </table>
 
-<%= link_to 'New Email', new_email_path %>
-
-<!--
-
-Input container with checkboxes based on their inputs
-
-Onclick for each of those either show / hide individual container
-
-in the background scrape zendesk analytics
-
-preview button: shows separate container below with email preview
-
-if they like what they see, send it out from there
-
-dropdown of current open issues (like, newest 8 maybe?)
--->
-
-<!--<h3>Create new Email</h3>-->
-
-<!--<div class="row">-->
-<!--  <div class="col-sm-8">-->
-<!--    <form class ="srm">-->
-<!--      <input type = "checkbox" name="notice" onclick="showContainer(name)"> Add Notice-->
-<!--      <input type = "checkbox" name="ongoing" onclick=""> Add Ongoing Issues-->
-<!--      <input type = "checkbox" name="fixed" onclick=""> Add Fixed/Closed Issues-->
-<!--      <input type = "checkbox" name="gif" onclick=""> Add GIF-->
-<!--      <br>-->
-<!--      <input type = "button" name="preview" value="Preview Email" onclick="">-->
-<!--      <br><br>-->
-<!--      <input type="submit" value="Send Email">-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</div>-->

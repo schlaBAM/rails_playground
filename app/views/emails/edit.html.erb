@@ -1,33 +1,7 @@
 <h3>edit email somehow</h3>
 
-<%= form_with(model: @email, local: true) do |form| %>
-  <% if @email.errors.any? %>
-    <div id="error_explanation">
-      <h5>
-        <%= pluralize(@email.errors.count, "error") %> caused you to blow it:
-      </h5>
-      <ul>
-        <% @email.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render 'form' %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-
-<% end %>
+<br>
 
 <%= link_to 'Go Back', emails_path %>

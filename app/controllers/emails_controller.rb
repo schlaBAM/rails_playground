@@ -1,4 +1,9 @@
 class EmailsController < ApplicationController
+
+  http_basic_authenticate_with name: "admin",
+                               password: "hunter2",
+                               except: [:index, :show]
+
   def index
     @emails = Email.all
   end
@@ -36,8 +41,10 @@ class EmailsController < ApplicationController
     end
   end
 
-  def delete
-
+  def destroy
+    @email = Email.find(params[:id])
+    @email.destroy
+    redirect_to emails_path
   end
 
   private

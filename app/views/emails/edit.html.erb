@@ -1,18 +1,19 @@
-<h2>new email yo</h2>
+<h3>edit email somehow</h3>
 
-<%= form_with scope: :email, url: emails_path, local: true do |form| %>
+<%= form_with(model: @email, local: true) do |form| %>
   <% if @email.errors.any? %>
-    <div id = "error_explanation">
+    <div id="error_explanation">
       <h5>
-        ya dun blew it. <%= pluralize(@email.errors.count, "error") %>:
+        <%= pluralize(@email.errors.count, "error") %> caused you to blow it:
       </h5>
       <ul>
-        <% @email.errors.full_messages.each do |error|%>
-          <li><%= error %> </li>
-          <% end %>
+        <% @email.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
       </ul>
     </div>
-    <% end %>
+  <% end %>
+
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -26,6 +27,7 @@
   <p>
     <%= form.submit %>
   </p>
+
 <% end %>
 
 <%= link_to 'Go Back', emails_path %>

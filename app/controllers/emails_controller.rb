@@ -9,14 +9,35 @@ class EmailsController < ApplicationController
 
 
   def new
-
+    @email = Email.new
   end
 
   def create
-    #render plain: params[:email][:title].inspect
     @email = Email.new(email_params)
-    @email.save
-    redirect_to @email
+    if @email.save
+      redirect_to @email
+    else
+      puts "yo you broke this shit"
+      render 'new'
+    end
+  end
+
+  def edit
+    @email = Email.find(params[:id])
+  end
+
+  def update
+    @email = Email.find(params[:id])
+    if @email.update(email_params)
+      redirect_to @email
+    else
+      puts "NO YOU CANT DO THAT"
+      render 'edit'
+    end
+  end
+
+  def delete
+
   end
 
   private

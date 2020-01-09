@@ -1,3 +1,23 @@
+<h3>Emails List </h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+  <%  @emails.each do |email| %>
+  <tr>
+    <td><%= email.id %></td>
+    <td><%= email.title %></td>
+    <td><%= email.text %></td>
+    <td><%= link_to 'Show Email', email_path(email) %></td>
+    <td><%= link_to 'Edit Email', edit_email_path(email) %></td>
+  </tr>
+    <% end %>
+</table>
+
+<%= link_to 'New Email', new_email_path %>
+
 <!--
 
 Input container with checkboxes based on their inputs
@@ -11,45 +31,7 @@ preview button: shows separate container below with email preview
 if they like what they see, send it out from there
 
 dropdown of current open issues (like, newest 8 maybe?)
-
-Have all divs set to hidden until checkmark clicked
-
 -->
-
-<!--<script>-->
-
-<!--  document.getElementsByClassName("srm").addEventListener(showContainer(name));-->
-<!--  function showContainer(div){-->
-
-<!--      let boxType = div;-->
-
-<!--      if(boxType.style.visibility === 'hidden'){-->
-<!--          boxType.style.visibility = 'visible';-->
-<!--      } else {-->
-<!--          boxType.style.visibility = 'hidden';-->
-<!--      }-->
-<!--  }-->
-
-<!--</script>-->
-
-<h3>Emails List </h3>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
-  <%=  @emails.each do |email| %>
-  <tr>
-    <td><%= email.id %></td>
-    <td><%= email.title %></td>
-    <td><%= email.text %></td>
-    <td><%= link_to 'Show', email_path(email) %></td>
-  </tr>
-    <% end %>
-</table>
-
-<%= link_to 'New Email', new_email_path %>
 
 <!--<h3>Create new Email</h3>-->
 

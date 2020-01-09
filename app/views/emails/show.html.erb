@@ -1,7 +1,22 @@
 <h3>here's what your dumbass wrote</h3>
 
 <p>
- id = <%= @email.id %><br>
+  id = <%= @email.id %><br>
   title = <%= @email.title %><br>
   text = <%= @email.text %>
 </p>
+
+<% if @email.replies.size > 0 %>
+  <h3>comments, I guess</h3>
+  <%= render @email.replies %>
+<% end %>
+
+<br>
+
+<h4>join the argument</h4>
+
+<%= render 'replies/form' %>
+
+<%= link_to 'Edit', edit_email_path(@email) %>
+|
+<%= link_to 'Go Back', emails_path %>

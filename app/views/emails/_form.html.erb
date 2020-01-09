@@ -1,0 +1,29 @@
+<%= form_with model: @email, local: true do |form| %>
+
+<% if @email.errors.any? %>
+<div id="error_explanation">
+  <h3>
+    You got <%= pluralize(@email.errors.size, 'error')%> dude:
+  </h3>
+
+  <ul>
+    <% @email.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <%= form.submit %>
+
+<% end %>
